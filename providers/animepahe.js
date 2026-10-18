@@ -1,0 +1,9 @@
+/** AnimePahe — experimental Format A adapter. Search API responses can change. */
+var BASE="https://animepahe.ru";
+function req(api,url){return api.request({url:url,headers:{"User-Agent":"Mozilla/5.0","Accept":"application/json, text/html,*/*"}}).then(function(r){if(r.statusCode<200||r.statusCode>=300)throw new Error("AnimePahe HTTP "+r.statusCode);return r.body;});}
+function html(s){return String(s||"").replace(/&amp;/g,"&").replace(/&#0?39;/g,"'").replace(/&quot;/g,'"').replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim();}
+module.exports={
+ async search(input,api){var q=input&&input.query?String(input.query):"";if(!q)return[];var raw=await req(api,BASE+"/api?m=search&q="+encodeURIComponent(q));var j=JSON.parse(raw);var rows=j.data||[];return rows.map(function(x){return{name:html(x.title||x.title_jp||"AnimePahe result"),alias:BASE+"/anime/"+String(x.session||""),imageUrl:x.poster||undefined};}).filter(function(x){return x.alias!==BASE+"/anime/";});},
+ async getAnimeEpisodeLink(input,api){var id=input&&input.aliasId?String(input.aliasId):"";if(!id)return[];var m=/\/anime\/([^/?#]+)/.exec(id);if(!m)return[];var raw=await req(api,BASE+"/api?m=release&id="+encodeURIComponent(m[1])+"&sort=episode_asc&page=1");var j=JSON.parse(raw),rows=j.data||[];return rows.map(function(x){return{episodeLink:BASE+"/play/"+String(x.session||""),episodeNumber:Number(x.episode),episodeTitle:"Episode "+String(x.episode),metadata:{session:x.session}};});},
+ async getStreams(input,api){var id=input&&input.episodeId?String(input.episodeId):"";if(!id)return[];var body=await req(api,id);var out=[],re=/(?:src|data-src|file)=["'](https?:[^"']+)["']/gi,m;while((m=re.exec(body))!==null){var u=m[1].replace(/&amp;/g,"&");if(/\.(?:m3u8|mp4)(?:[?#]|$)/i.test(u))out.push({quality:"Auto",url:u,server:"AnimePahe",customHeaders:{Referer:id}});}return out;}
+};

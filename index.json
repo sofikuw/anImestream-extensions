@@ -80,6 +80,118 @@
         "animeheaven.me"
       ],
       "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "MangaFire",
+      "identifier": "mangafire-js",
+      "version": "0.1.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "manga"
+      ],
+      "entrypoint": "providers/mangafire.js",
+      "entrypointSha256": "3cf9de7b64b01ddf790cd4820fcc9352512df8cac95b2371ac253ebcc31138e9",
+      "allowedHosts": [
+        "mangafire.to"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "WeebCentral",
+      "identifier": "weebcentral-js",
+      "version": "0.1.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "manga"
+      ],
+      "entrypoint": "providers/weebcentral.js",
+      "entrypointSha256": "4ffe76f626f8e919ac2c662c29a132f5a61cfbe972d245d0405cd93dc7ec9893",
+      "allowedHosts": [
+        "weebcentral.com"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "MangaReader",
+      "identifier": "mangareader-js",
+      "version": "0.1.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "manga"
+      ],
+      "entrypoint": "providers/mangareader.js",
+      "entrypointSha256": "80d625ff235e26fd85008782bf4b66ea7537bf2089ae275d990cb85552b0ef8f",
+      "allowedHosts": [
+        "mangareader.to"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "MangaKakalot",
+      "identifier": "mangakakalot-js",
+      "version": "0.1.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "manga"
+      ],
+      "entrypoint": "providers/mangakakalot.js",
+      "entrypointSha256": "07b29531169665109b573a5efeb53ba0afabfdac5ce9f39666af750e5c4a447f",
+      "allowedHosts": [
+        "mangakakalot.com"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "HiAnime",
+      "identifier": "hianime-js",
+      "version": "0.1.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/hianime.js",
+      "entrypointSha256": "55ecc12964adafdbf0af9e09ab41a76199ae3e84fbf99e3d3a9efbed49e5cf37",
+      "allowedHosts": [
+        "hianime.to"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "GogoAnime",
+      "identifier": "gogoanime-js",
+      "version": "0.1.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/gogoanime.js",
+      "entrypointSha256": "cad2bb1db12e572c58379411d2dc62ec1ecf33b5ad72841787f73c4999969fda",
+      "allowedHosts": [
+        "gogoanime3.co"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "AnimePahe",
+      "identifier": "animepahe-js",
+      "version": "0.1.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/animepahe.js",
+      "entrypointSha256": "016b6c5be4cd08b308bf15b2635ef091c8fe60b83ccea93bfd33fa1972036f5c",
+      "allowedHosts": [
+        "animepahe.ru"
+      ],
+      "supportDownloads": false
     }
   ]
 }
