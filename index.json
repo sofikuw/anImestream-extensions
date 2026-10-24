@@ -91,7 +91,7 @@
         "anime"
       ],
       "entrypoint": "providers/reanime.js",
-      "entrypointSha256": "0c3f340518a7f4e27865665007410aa0a39eb2787a8289f3c124185d526b9890",
+      "entrypointSha256": "3c37f91df40735727135de32d2dfdbdfdc669fb5c034fed1158c896dedaf3955",
       "allowedHosts": [
         "reanime.to",
         "flixcloud.cc",
@@ -228,6 +228,142 @@
       "entrypointSha256": "016b6c5be4cd08b308bf15b2635ef091c8fe60b83ccea93bfd33fa1972036f5c",
       "allowedHosts": [
         "animepahe.ru"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "AnimeGG (API)",
+      "identifier": "anivexa-animegg-js",
+      "version": "1.0.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/anivexa-animegg.js",
+      "entrypointSha256": "20bed44460efbc0d3352fe3d002516f4fb260dbeb55aa2cd4d80520d44d50b84",
+      "allowedHosts": [
+        "anivexa-api.vercel.app",
+        "graphql.anilist.co"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "AniKoto (API)",
+      "identifier": "anivexa-anikoto-js",
+      "version": "1.0.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/anivexa-anikoto.js",
+      "entrypointSha256": "04015fdfb4f6397e96c2b5db2770cdc1374751622617d6e3770c445cc4ea7cc6",
+      "allowedHosts": [
+        "anivexa-api.vercel.app",
+        "graphql.anilist.co"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "AniNeko (API)",
+      "identifier": "anivexa-anineko-js",
+      "version": "1.0.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/anivexa-anineko.js",
+      "entrypointSha256": "bb36c0d672965dd0af4f9e578d0c31723f6fcc5d5247f026a976d2dc9a0966e7",
+      "allowedHosts": [
+        "anivexa-api.vercel.app",
+        "graphql.anilist.co"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "Anitaku (API)",
+      "identifier": "scraper-anitaku-js",
+      "version": "1.0.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/scraper-anitaku.js",
+      "entrypointSha256": "2c2c16389e28943373e033b3a440d37a9bada7ac2bf296e56301c75ae05ac9f9",
+      "allowedHosts": [
+        "fetch.n92dev.us.kg",
+        "graphql.anilist.co"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "MKissa (API)",
+      "identifier": "scraper-mkissa-js",
+      "version": "1.0.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/scraper-mkissa.js",
+      "entrypointSha256": "27995e360194485c20f376f52bfcaac0efd01572a6ae82bfbca168258ce939be",
+      "allowedHosts": [
+        "fetch.n92dev.us.kg",
+        "graphql.anilist.co"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "Suzu / Senshi (API)",
+      "identifier": "scraper-suzu-js",
+      "version": "1.0.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/scraper-suzu.js",
+      "entrypointSha256": "0ccc070592407e4322e44eaf8771ced4079c4e32c3c25b2df5dfade22a27dd3d",
+      "allowedHosts": [
+        "fetch.n92dev.us.kg",
+        "graphql.anilist.co"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "2D Hive (API)",
+      "identifier": "scraper-2dhive-js",
+      "version": "1.0.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/scraper-2dhive.js",
+      "entrypointSha256": "33afea36c13b35fa21303cdc2fb213ef5cfd3dd2cce315ed17fdc9aefd17a9f9",
+      "allowedHosts": [
+        "fetch.n92dev.us.kg",
+        "graphql.anilist.co"
+      ],
+      "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "AnimeHeaven (API)",
+      "identifier": "scraper-animeheaven-js",
+      "version": "1.0.0",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/scraper-animeheaven.js",
+      "entrypointSha256": "ed4851bad21042760fcffb147fd95b4e165070c55648164f598f12e1b98b2801",
+      "allowedHosts": [
+        "fetch.n92dev.us.kg",
+        "graphql.anilist.co"
       ],
       "supportDownloads": false
     }
