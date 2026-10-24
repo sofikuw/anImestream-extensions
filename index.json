@@ -19,22 +19,6 @@
     },
     {
       "manifestVersion": 1,
-      "name": "MangaDex",
-      "identifier": "mangadex-js",
-      "version": "1.0.0",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "manga"
-      ],
-      "entrypoint": "providers/mangadex.js",
-      "entrypointSha256": "240234e7e6b1dcd9ec4e3c11dfa399879f9d5baaa70addc766e65b03d6253f34",
-      "allowedHosts": [
-        "api.mangadex.org"
-      ],
-      "supportDownloads": false
-    },
-    {
-      "manifestVersion": 1,
       "name": "MangaPill",
       "identifier": "mangapill-js",
       "version": "1.0.0",
@@ -48,76 +32,6 @@
         "mangapill.com"
       ],
       "supportDownloads": false
-    },
-    {
-      "manifestVersion": 1,
-      "name": "AnimeGG",
-      "identifier": "animegg-js",
-      "version": "1.0.0",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/animegg.js",
-      "entrypointSha256": "a6d367b64aac33d1aad4c1b47beaf63110d370fdecd55dd76d0f539bbc5b6dbd",
-      "allowedHosts": [
-        "www.animegg.org"
-      ],
-      "supportDownloads": false
-    },
-    {
-      "manifestVersion": 1,
-      "name": "AnimeHeaven",
-      "identifier": "animeheaven-js",
-      "version": "1.1.0",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/animeheaven.js",
-      "entrypointSha256": "2f3d8ee2e45216ca400e1e8a9bb48f0021407ec76589419d9146a05469715e68",
-      "allowedHosts": [
-        "animeheaven.me"
-      ],
-      "supportDownloads": false
-    },
-    {
-      "manifestVersion": 1,
-      "name": "Re:ANIME",
-      "identifier": "reanime-js",
-      "version": "1.0.0",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/reanime.js",
-      "entrypointSha256": "0c3f340518a7f4e27865665007410aa0a39eb2787a8289f3c124185d526b9890",
-      "allowedHosts": [
-        "reanime.to",
-        "flixcloud.cc",
-        "fetch.flixcloud.cc",
-        "fetch1.flixcloud.cc",
-        "fetch2.flixcloud.cc",
-        "fetch3.flixcloud.cc",
-        "fetch4.flixcloud.cc",
-        "fetch5.flixcloud.cc",
-        "fetch6.flixcloud.cc",
-        "fetch7.flixcloud.cc",
-        "fetch8.flixcloud.cc",
-        "fetch9.flixcloud.cc",
-        "fetch10.flixcloud.cc",
-        "fetch11.flixcloud.cc",
-        "fetch12.flixcloud.cc",
-        "fetch13.flixcloud.cc",
-        "fetch14.flixcloud.cc",
-        "fetch15.flixcloud.cc",
-        "fetch16.flixcloud.cc",
-        "fetch17.flixcloud.cc",
-        "fetch18.flixcloud.cc",
-        "fetch19.flixcloud.cc",
-        "fetch20.flixcloud.cc"
-      ],
-      "supportDownloads": true
     },
     {
       "manifestVersion": 1,
@@ -148,61 +62,6 @@
       "entrypointSha256": "9d7c8e6c880a486cc3bbe970a76eca7b8b217aced8e65bc2ee80e824c0a66012",
       "allowedHosts": [
         "mangakatana.com"
-      ],
-      "supportDownloads": false
-    },
-    {
-      "manifestVersion": 1,
-      "name": "MangaNato",
-      "identifier": "manganato-js",
-      "version": "1.0.0",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "manga"
-      ],
-      "entrypoint": "providers/manganato.js",
-      "entrypointSha256": "76a7adfda601fbb45cdae50d399ebb155271cffde891a88c6ed9efe99a1a6310",
-      "allowedHosts": [
-        "www.manganato.gg",
-        "manganato.gg",
-        "www.natomanga.com"
-      ],
-      "supportDownloads": false
-    },
-    {
-      "manifestVersion": 1,
-      "name": "AnimePahe",
-      "identifier": "animepahe-js",
-      "version": "1.0.0",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/animepahe.js",
-      "entrypointSha256": "514857c952cb7771f9d7e42e64ccc32a0009d351b3df71df8b9badf1b4fb6ffe",
-      "allowedHosts": [
-        "animepahe.si",
-        "animepahe.org",
-        "animepahe.ru",
-        "kwik.si",
-        "kwik.cx",
-        "kwik.sx"
-      ],
-      "supportDownloads": false
-    },
-    {
-      "manifestVersion": 1,
-      "name": "AniZone",
-      "identifier": "anizone-js",
-      "version": "1.0.0",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/anizone.js",
-      "entrypointSha256": "ecfc21b38efa8a9b448192e3c1c79a193c9e8519185a4a9855c7a9cd40a457a5",
-      "allowedHosts": [
-        "anizone.to"
       ],
       "supportDownloads": false
     }
