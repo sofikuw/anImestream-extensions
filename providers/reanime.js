@@ -176,7 +176,7 @@ async function extractStream(api, dataLink, label, isDub) {
   var fileId = fileIdMatch[0];
   var token = tokenMatch[0];
   var base = baseMatch ? baseMatch[0] : FLIX;
-  var resolution = resolutionMatch ? resolutionMatch[1] : "Auto";
+  var resolution = resolutionMatch ? resolutionMatch[1] : "1080p";
   var subtitle = pickSubtitle(embed, isDub);
 
   // The progress endpoint is what warms FlixCloud's cache. The runtime has no
