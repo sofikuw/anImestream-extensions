@@ -12,11 +12,12 @@ MangaYomi/Tachiyomi format, so it installs straight into AnImestream.
 
 ### One click
 
-[![Add to AnImestream](https://img.shields.io/badge/Add%20to-AnImestream-6C5CE7?style=for-the-badge)](https://sofikuw.is-not-a.dev/anImestream-extensions/)
+[![Add to AnImestream](https://img.shields.io/badge/Add%20to-AnImestream-6C5CE7?style=for-the-badge)](https://sofikuw.is-not-a.dev/anImestream-extensions/open?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsofikuw%2FanImestream-extensions%2Fmain%2Findex.json)
 
-GitHub strips custom `astrm://` links from READMEs, so the button opens a small
-landing page that hands the link to the app. AnImestream must be installed on
-the device; if the hand-off is blocked, use the manual URL below.
+GitHub strips custom `astrm://` links from READMEs, so this uses an Android App
+Link. With a current AnImestream build the app opens directly; otherwise the
+link falls back to a small landing page. If the hand-off is blocked, use the
+manual URL below.
 
 ### Manual
 
