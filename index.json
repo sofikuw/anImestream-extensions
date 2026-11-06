@@ -79,7 +79,7 @@
         "anime"
       ],
       "entrypoint": "providers/animeparadise.js",
-      "entrypointSha256": "8273b004704c26b764a640ae1d1a986ea449679ab978dcb4f80dda5371065126",
+      "entrypointSha256": "0b1da9cae54f5cf8ae77ce1d789b35400d1ccf9d9c27ec605f53c14d947fa895",
       "allowedHosts": [
         "www.animeparadise.moe",
         "api.animeparadise.moe",
