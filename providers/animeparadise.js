@@ -65,7 +65,7 @@ module.exports = {
         thumbnail: ep.image,
       });
     }
-    // chapters.reverse();
+    chapters.reverse();
     return chapters;
   },
 
