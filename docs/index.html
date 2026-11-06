@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Add AnImestream Extensions</title>
+<style>
+  :root {
+    --bg: #0f1014;
+    --card: #17191f;
+    --text: #f2f4f8;
+    --sub: #9aa3b2;
+    --accent: #6c5ce7;
+    --accent-hi: #8577f0;
+    --line: #262a33;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: radial-gradient(1200px 600px at 50% -10%, #241f4d 0%, var(--bg) 55%);
+    color: var(--text);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    width: 100%;
+    max-width: 520px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.45);
+  }
+  .logo {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--accent), #4b3fc4);
+    display: grid; place-items: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 8px; letter-spacing: -.02em; }
+  p { margin: 0 0 22px; color: var(--sub); }
+  .btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 650;
+    font-size: 17px;
+    color: #fff;
+    background: var(--accent);
+    padding: 16px 20px;
+    border-radius: 14px;
+    transition: background .15s ease, transform .05s ease;
+  }
+  .btn:hover { background: var(--accent-hi); }
+  .btn:active { transform: translateY(1px); }
+  .hint { margin: 14px 0 0; font-size: 14px; color: var(--sub); }
+  .hint a { color: var(--accent-hi); }
+  .divider { height: 1px; background: var(--line); margin: 26px 0; border: 0; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--sub); margin: 0 0 10px; }
+  .urlrow { display: flex; gap: 8px; }
+  .urlrow input {
+    flex: 1; min-width: 0;
+    background: #0d0e12;
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 12px;
+    font: 13px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .urlrow button {
+    border: 1px solid var(--line);
+    background: #232733;
+    color: var(--text);
+    border-radius: 10px;
+    padding: 0 14px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .urlrow button:hover { background: #2c3140; }
+  ol { margin: 10px 0 0; padding-left: 20px; color: var(--sub); font-size: 14px; }
+  ol li { margin: 6px 0; }
+  .status { margin-top: 14px; font-size: 14px; color: #f5c451; min-height: 20px; }
+  footer { margin-top: 26px; font-size: 12px; color: #6b7280; text-align: center; }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="logo">▶</div>
+    <h1>Add AnImestream Extensions</h1>
+    <p>Adds the community provider repository to AnImestream so its anime and manga sources appear in the app.</p>
+
+    <a class="btn" id="open" href="astrm://add-repo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsofikuw%2FanImestream-extensions%2Fmain%2Findex.json">Open in AnImestream</a>
+    <p class="hint">AnImestream must be installed on this device. If nothing happens, use the manual option below.</p>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+
+    <hr class="divider">
+
+    <h2>Manual install</h2>
+    <div class="urlrow">
+      <input id="repo" readonly value="https://raw.githubusercontent.com/sofikuw/anImestream-extensions/main/index.json" aria-label="Repository index URL">
+      <button id="copy" type="button">Copy</button>
+    </div>
+    <ol>
+      <li>Open AnImestream.</li>
+      <li>Go to <strong>Settings → Providers → Add repository</strong>.</li>
+      <li>Paste the URL and confirm.</li>
+    </ol>
+
+    <footer>Hosted on GitHub Pages · <a href="https://github.com/sofikuw/anImestream-extensions" style="color:inherit">Repository</a></footer>
+  </main>
+
+<script>
+  (function () {
+    var landing = 'astrm://add-repo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsofikuw%2FanImestream-extensions%2Fmain%2Findex.json';
+    // Chrome on Android handles intent:// better than a bare custom scheme.
+    var intent = 'intent://add-repo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsofikuw%2FanImestream-extensions%2Fmain%2Findex.json#Intent;scheme=astrm;package=app.animestream;end';
+    var open = document.getElementById('open');
+    var status = document.getElementById('status');
+
+    open.addEventListener('click', function (event) {
+      var isAndroid = /android/i.test(navigator.userAgent);
+      if (isAndroid) {
+        event.preventDefault();
+        window.location.href = intent;
+      }
+      status.textContent = 'Opening AnImestream… If the app did not open, copy the URL below.';
+      setTimeout(function () {
+        if (!document.hidden) {
+          status.textContent = 'Still here? The app may not be installed, or the browser blocked the link. Use Manual install below.';
+        }
+      }, 2500);
+    });
+
+    document.getElementById('copy').addEventListener('click', function () {
+      var input = document.getElementById('repo');
+      var done = function () {
+        var btn = document.getElementById('copy');
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(input.value).then(done, function () {
+          input.select();
+          document.execCommand('copy');
+          done();
+        });
+      } else {
+        input.select();
+        document.execCommand('copy');
+        done();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

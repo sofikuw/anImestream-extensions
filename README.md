@@ -12,9 +12,11 @@ MangaYomi/Tachiyomi format, so it installs straight into AnImestream.
 
 ### One click
 
-[![Add to AnImestream](https://img.shields.io/badge/Add%20to-AnImestream-6C5CE7?style=for-the-badge)](astrm://add-repo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsofikuw%2FanImestream-extensions%2Fmain%2Findex.json)
+[![Add to AnImestream](https://img.shields.io/badge/Add%20to-AnImestream-6C5CE7?style=for-the-badge)](https://sofikuw.github.io/anImestream-extensions/)
 
-The button opens AnImestream's *Add repository* screen with the URL prefilled.
+GitHub strips custom `astrm://` links from READMEs, so the button opens a small
+landing page that hands the link to the app. AnImestream must be installed on
+the device; if the hand-off is blocked, use the manual URL below.
 
 ### Manual
 
