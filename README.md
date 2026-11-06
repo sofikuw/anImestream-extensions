@@ -49,8 +49,10 @@ Then install the providers you want from the catalog.
 
 ### NSFW providers
 
-`NHentai` and `Hanime` are marked `"nsfw": true` in `index.json`. They are
-normal entries; hide/remove them from the catalog if you do not want them.
+`NHentai` and `Hanime` are marked `"nsfw": true` in `index.json`. AnImestream
+hides them — in the catalog and in the source pickers — until **NSFW mode** is
+turned on under *Settings → General*. Turning the mode off hides them again
+without uninstalling anything.
 
 ---
 
