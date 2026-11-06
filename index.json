@@ -64,6 +64,25 @@
         "mangakatana.com"
       ],
       "supportDownloads": false
+    },
+    {
+      "manifestVersion": 1,
+      "name": "Anibd.App",
+      "identifier": "anibdapp-js",
+      "version": "1.0.3",
+      "scriptType": "javascript",
+      "contentTypes": [
+        "anime"
+      ],
+      "entrypoint": "providers/anibdapp.js",
+      "entrypointSha256": "6925a4b9bf1a801f3d63b37f28b55b87d32ec92df1ddb6695f2ec710a5ee27e8",
+      "allowedHosts": [
+        "anibd.app",
+        "eng.animeapps.top",
+        "playeng.animeapps.top",
+        "ani10.nukitashi.top"
+      ],
+      "supportDownloads": false
     }
   ]
 }
