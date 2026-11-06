@@ -1,0 +1,143 @@
+# AnImestream Extensions
+
+Community provider repository for [AnImestream](https://github.com/sofikuw/anImestream).
+
+This repo hosts JavaScript providers that the app loads at runtime. Everything
+here targets the app's **generic** provider format (`module.exports`), not the
+MangaYomi/Tachiyomi format, so it installs straight into AnImestream.
+
+---
+
+## Add this repository
+
+### One click
+
+[![Add to AnImestream](https://img.shields.io/badge/Add%20to-AnImestream-6C5CE7?style=for-the-badge)](astrm://add-repo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsofikuw%2FanImestream-extensions%2Fmain%2Findex.json)
+
+The button opens AnImestream's *Add repository* screen with the URL prefilled.
+
+### Manual
+
+Open **Settings → Providers → Add repository** and paste:
+
+```
+https://raw.githubusercontent.com/sofikuw/anImestream-extensions/main/index.json
+```
+
+Then install the providers you want from the catalog.
+
+---
+
+## Providers
+
+| Provider | Type | NSFW | Notes |
+| --- | --- | --- | --- |
+| Ragnarok Scanlation | manga | no | |
+| MangaPill | manga | no | |
+| WeebCentral | manga | no | |
+| MangaKatana | manga | no | |
+| Anibd.App | anime | no | |
+| Senshi | anime | no | |
+| AnimeParadise | anime | no | Streams unavailable (site changed; episodes only) |
+| Animetsu | anime | no | |
+| Animeonsen | anime | no | |
+| Sudatchi | anime | no | |
+| SubsPlease | anime | no | Torrent/magnet sources only |
+| AnimeZZ | anime | no | |
+| NHentai | manga | **yes** | |
+| Hanime | anime | **yes** | |
+
+### NSFW providers
+
+`NHentai` and `Hanime` are marked `"nsfw": true` in `index.json`. They are
+normal entries; hide/remove them from the catalog if you do not want them.
+
+---
+
+## Format
+
+`index.json` uses `schemaVersion: 1`:
+
+```json
+{
+  "schemaVersion": 1,
+  "providers": [
+    {
+      "manifestVersion": 1,
+      "name": "Example",
+      "identifier": "example-js",
+      "version": "1.0.0",
+      "scriptType": "javascript",
+      "contentTypes": ["anime"],
+      "entrypoint": "providers/example.js",
+      "entrypointSha256": "<sha256 of the file>",
+      "allowedHosts": ["example.com"],
+      "supportDownloads": false,
+      "nsfw": false
+    }
+  ]
+}
+```
+
+- `identifier` must match `^[a-z0-9][a-z0-9._-]*$`.
+- `version` must be `major.minor.patch`.
+- `entrypoint` must be a relative path on the repo's HTTPS host.
+- `entrypointSha256` must be the 64-char SHA-256 of the file.
+- `allowedHosts` are exact public hostnames; the provider's HTTP bridge is
+  HTTPS-only, uses no redirects, and only reaches these hosts.
+
+### Anime provider contract
+
+```js
+module.exports = {
+  async search({ query }, api) {
+    // -> [{ name, alias, imageUrl }]
+  },
+  async getAnimeEpisodeLink({ aliasId, dub }, api) {
+    // -> [{ episodeLink, episodeNumber, episodeTitle?, thumbnail?,
+    //       description?, isFiller?, hasDub?, metadata? }]
+  },
+  async getStreams({ episodeId, dub, metadata }, api) {
+    // -> [{ quality, url, server?, backup?, subtitle?, subtitleFormat? }]
+  },
+  async getDownloadSources({ episodeUrl, dub, metadata }, api) {
+    // optional; only used when supportDownloads is true
+  }
+};
+```
+
+`api.request({ url, method?, headers?, body? })` returns
+`{ statusCode, headers, body }` with the body as text.
+
+### Manga provider contract
+
+```js
+module.exports = {
+  async getChapters({ title, totalChapters }, api) {
+    // -> [{ chapterId, chapterNumber, chapterTitle, scanlator }]
+  },
+  async getPages({ chapterId }, api) {
+    // -> [{ index, url, headers }]
+  }
+};
+```
+
+---
+
+## Adding a provider
+
+1. Drop `providers/<slug>.js` in this repo.
+2. Add an entry to `index.json`, pointing `entrypoint` at the file.
+3. Set `entrypointSha256` to `sha256sum providers/<slug>.js`.
+4. Add every host the provider calls to `allowedHosts`.
+5. Commit and push.
+
+```bash
+sha256sum providers/<slug>.js
+```
+
+## Disclaimer
+
+These providers only fetch publicly available pages on behalf of the user.
+Content ownership and licensing belong to the respective sites. Use them in
+line with the laws of your country and the terms of the sites involved.
