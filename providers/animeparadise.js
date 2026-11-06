@@ -70,29 +70,46 @@ module.exports = {
   },
 
   async getStreams({ episodeId }, api) {
-    var page = await get(api, WEB + "/watch/" + episodeId);
-    var data = nextData(page);
-    var episode =
-      data && data.props && data.props.pageProps
-        ? data.props.pageProps.episode
-        : null;
+    var raw = String(episodeId);
+    var uid = raw;
+    var origin = "";
+    var q = raw.indexOf("?");
+    if (q !== -1) {
+      uid = raw.slice(0, q);
+      var params = raw.slice(q + 1).split("&");
+      for (var i = 0; i < params.length; i++) {
+        var kv = params[i].split("=");
+        if (kv[0] === "origin") origin = decodeURIComponent(kv[1] || "");
+      }
+    }
+    var url =
+      API + "/ep/" + uid + (origin ? "?origin=" + encodeURIComponent(origin) : "");
+    var body = await get(api, url);
+    var data = JSON.parse(body || "{}").data;
+    var episode = data && data.episode ? data.episode : null;
     if (!episode || !episode.streamLink) return [];
 
     var master = STREAM + "/m3u8?url=" + encodeURIComponent(episode.streamLink);
-    var streams = [{ quality: "Auto", url: master }];
+    var streams = [{ quality: "Auto", url: master, server: "AnimeParadise" }];
 
-    var playlist = await get(api, master);
-    var lines = playlist.split("\n");
-    for (var i = 0; i < lines.length; i++) {
-      if (lines[i].indexOf("#EXT-X-STREAM-INF:") === 0) {
-        var resolution = lines[i].match(/RESOLUTION=(\d+x\d+)/);
-        streams.push({
-          quality: resolution ? resolution[1] : "Auto",
-          url: STREAM + lines[i + 1].trim(),
-          server: "AnimeParadise",
-        });
+    try {
+      var playlist = await get(api, master);
+      var lines = playlist.split("\n");
+      for (var j = 0; j < lines.length; j++) {
+        if (lines[j].indexOf("#EXT-X-STREAM-INF:") === 0) {
+          var resolution = lines[j].match(/RESOLUTION=(\d+x\d+)/);
+          var next = lines[j + 1] ? lines[j + 1].trim() : "";
+          if (!next) continue;
+          var variant = next.indexOf("http") === 0 ? next : STREAM + next;
+          streams.push({
+            quality: resolution ? resolution[1] : "Auto",
+            url: variant,
+            server: "AnimeParadise",
+          });
+        }
       }
-    }
+    } catch (e) {}
+
     return streams;
   },
 };

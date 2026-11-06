@@ -71,74 +71,19 @@
     },
     {
       "manifestVersion": 1,
-      "name": "Anibd.App",
-      "identifier": "anibdapp-js",
-      "version": "1.0.3",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/anibdapp.js",
-      "entrypointSha256": "6925a4b9bf1a801f3d63b37f28b55b87d32ec92df1ddb6695f2ec710a5ee27e8",
-      "allowedHosts": [
-        "anibd.app",
-        "eng.animeapps.top",
-        "playeng.animeapps.top",
-        "ani10.nukitashi.top"
-      ],
-      "supportDownloads": false,
-      "nsfw": false
-    },
-    {
-      "manifestVersion": 1,
-      "name": "Senshi",
-      "identifier": "senshi-js",
-      "version": "1.0.1",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/senshi.js",
-      "entrypointSha256": "5735ede350420135f967ef2f2aba7bf8c6fdd5d6d3cb2cc662e75cb59fcfd285",
-      "allowedHosts": [
-        "senshi.live"
-      ],
-      "supportDownloads": false,
-      "nsfw": false
-    },
-    {
-      "manifestVersion": 1,
       "name": "AnimeParadise",
       "identifier": "animeparadise-js",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "scriptType": "javascript",
       "contentTypes": [
         "anime"
       ],
       "entrypoint": "providers/animeparadise.js",
-      "entrypointSha256": "1253dba1fd30c5eb76410721b18c496dd32870ebcead9c8329a0610d5de6f025",
+      "entrypointSha256": "8273b004704c26b764a640ae1d1a986ea449679ab978dcb4f80dda5371065126",
       "allowedHosts": [
         "www.animeparadise.moe",
         "api.animeparadise.moe",
         "stream.animeparadise.moe"
-      ],
-      "supportDownloads": false,
-      "nsfw": false
-    },
-    {
-      "manifestVersion": 1,
-      "name": "Animetsu",
-      "identifier": "animetsu-js",
-      "version": "1.2.2",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/animetsu.js",
-      "entrypointSha256": "7d7b2eab1084a3ee7060ebe9c50909286023aebe3a77be06464e203c6e0ef1ca",
-      "allowedHosts": [
-        "animetsu.bz",
-        "swiftstream.top"
       ],
       "supportDownloads": false,
       "nsfw": false
@@ -164,52 +109,17 @@
     },
     {
       "manifestVersion": 1,
-      "name": "Sudatchi",
-      "identifier": "sudatchi-js",
-      "version": "2.0.1",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/sudatchi.js",
-      "entrypointSha256": "6803332b187e0278811914d44ffdbe0af9fc59b983f6dde1ce9bb09432e8419b",
-      "allowedHosts": [
-        "sudatchi.com",
-        "ipfs.sudatchi.com"
-      ],
-      "supportDownloads": false,
-      "nsfw": false
-    },
-    {
-      "manifestVersion": 1,
       "name": "SubsPlease",
       "identifier": "subsplease-js",
-      "version": "0.0.5",
+      "version": "0.0.6",
       "scriptType": "javascript",
       "contentTypes": [
         "anime"
       ],
       "entrypoint": "providers/subsplease.js",
-      "entrypointSha256": "791b1251f2aa4b3a380d7dfab6cc5719cc238281177a06e6398a1ca7ab2a9f9d",
+      "entrypointSha256": "df6092ecb7db64f3468d698ae13d36449dc8ea1f331072b024da29e76d21af38",
       "allowedHosts": [
         "subsplease.org"
-      ],
-      "supportDownloads": false,
-      "nsfw": false
-    },
-    {
-      "manifestVersion": 1,
-      "name": "AnimeZZ",
-      "identifier": "animez-js",
-      "version": "1.1.1",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/animez.js",
-      "entrypointSha256": "4e814d98d229a307664a99a7f14fde32dedbef88d8295259fb6e16c38e894675",
-      "allowedHosts": [
-        "animeyy.com"
       ],
       "supportDownloads": false,
       "nsfw": false
@@ -228,24 +138,6 @@
       "allowedHosts": [
         "nhentai.net",
         "i.nhentai.net"
-      ],
-      "supportDownloads": false,
-      "nsfw": true
-    },
-    {
-      "manifestVersion": 1,
-      "name": "Hanime",
-      "identifier": "hanime-js",
-      "version": "1.0.0",
-      "scriptType": "javascript",
-      "contentTypes": [
-        "anime"
-      ],
-      "entrypoint": "providers/hanime.js",
-      "entrypointSha256": "fd3e5f718cd0a7fe8865b51f8a948efe2eef667b8b7f634248a803e3ac0743d2",
-      "allowedHosts": [
-        "hanime.tv",
-        "search.htv-services.com"
       ],
       "supportDownloads": false,
       "nsfw": true

@@ -47,6 +47,8 @@ module.exports = {
     var keys = Object.keys(episodes);
     for (var i = 0; i < keys.length; i++) {
       var ep = episodes[keys[i]];
+      var numberMatch = String(ep.episode).match(/^(\d+)/);
+      if (!numberMatch) continue;
       var urls = {};
       var downloads = ep.downloads || [];
       for (var j = 0; j < downloads.length; j++) {
@@ -54,7 +56,7 @@ module.exports = {
       }
       chapters.push({
         episodeLink: JSON.stringify(urls),
-        episodeNumber: parseInt(ep.episode, 10),
+        episodeNumber: parseInt(numberMatch[1], 10),
         episodeTitle: "Episode " + ep.episode,
       });
     }
