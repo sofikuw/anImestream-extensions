@@ -139,6 +139,11 @@ module.exports = {
 sha256sum providers/<slug>.js
 ```
 
+## License
+
+MIT — see [LICENSE](LICENSE). The app is GPL-3.0; MIT is compatible with it, so
+these providers can be loaded alongside it without changing the app's terms.
+
 ## Disclaimer
 
 These providers only fetch publicly available pages on behalf of the user.
